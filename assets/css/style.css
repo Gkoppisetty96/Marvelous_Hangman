@@ -56,12 +56,12 @@ button{
 
 
 
-#alphabet {
+.alphabet {
     margin:15px auto;
     padding:0;
     max-width:900px;
 }
-#alphabet li {
+.alphabet li {
     float:left;
     margin: 0 10px 10px 0;
     list-style:none;
@@ -78,7 +78,7 @@ button{
     border: solid 1px white;
     color: #ed1d24;
 } */
-#letter {
+.letter {
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
@@ -104,7 +104,7 @@ button{
 
 
   /* active functions- on click, make it black */
-.active {
+li.thisclicked{
     /* opacity: 50%; */
     background: black;
     border: solid 1px #ed1d24;

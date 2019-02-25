@@ -20,7 +20,7 @@ var guesses = [];
 // wrong guesses left
 var lives;
 // counting correct guesses
-var counter;
+var counter = 0;
 
 // setting counters for beginning
 var wins= 0;
@@ -43,9 +43,10 @@ var buttons = function () {
     // console.log ("function is running");
 
     for (var i = 0; i < alphabet.length; i++) {
-    letters.id = 'alphabet';
+        // make these classes instead
+    letters.classList.add ('alphabet');
     list = document.createElement ('li');
-    list.id = 'letter';
+    list.classList.add ('letter');
     list.innerHTML = alphabet[i];
     // run the check function
     check();
@@ -90,7 +91,9 @@ gamerAlerts = function () {
         lossesText.textContent = "losses: " + losses;
         console.log("losses : "+ losses);
     }
-    for (var i = 0; i < guesses.length; i++) {
+    // console.log(`guess length ${guesses.length}`);
+    // console.log(`counter`, counter);
+    // for (var i = 0; i < guesses.length; i++) {
         if (counter === guesses.length) {
            livesText.innerHTML = "You Win!";
             wins += 1;
@@ -98,7 +101,7 @@ gamerAlerts = function () {
             console.log ("Game Won");
             console.log ("wins: " + wins);
         }
-    }
+    // }
 }
 
 
@@ -110,7 +113,7 @@ check = function () {
         var guess = (this.innerHTML);
         // clicked buttons fade
         // not working- active class is being overridden
-        this.setAttribute("class", "active");
+        this.setAttribute("class", "thisclicked");
         this.onclick = null;
         for (var i = 0; i < hero.length; i++){
           // if the letter is part of the word  
