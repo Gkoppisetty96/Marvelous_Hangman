@@ -1,0 +1,112 @@
+/* marvel comics red: #ed1d24 */
+
+body {
+    background-image: url("../images/dark-honeycomb.png");
+    background-repeat: repeat;
+    height: 100%;
+    line-height: 1.5em;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.col-sm {
+    border: solid #ed1d24 1px;
+    /* margin-bottom: 50px; */
+}
+/* make the footer below everything */
+#bottom-row {
+    margin-bottom: 50px;
+}
+/* center the header */
+#header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* sticky footer */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #666666;
+    color: #8d8d8d;
+    text-align: center;
+    font-size: 15px;
+    /* height: 10%; */
+    margin-top: 100px;
+    /* no top margin found when window resized */
+}
+/* same hover effects as portfolio */
+a:hover {
+    text-shadow: 0 0 3px #4aaaa5;
+    text-decoration: none;
+    color: currentColor;
+}
+a {
+    color:#777777; 
+}
+/* button style */
+button{
+    border : solid 1px white;
+    padding: 18px 10px;
+    width:180px;
+    margin: 10px;
+    outline: none;
+}
+
+
+
+#alphabet {
+    margin:15px auto;
+    padding:0;
+    max-width:900px;
+}
+#alphabet li {
+    float:left;
+    margin: 0 10px 10px 0;
+    list-style:none;
+    width:35px;
+    height:30px;
+    padding-top:10px;
+    background: white;
+    cursor:pointer;
+    border: solid 1px white;
+    color: #ed1d24;
+}
+      
+/* #alphabet li:hover{
+    border: solid 1px white;
+    color: #ed1d24;
+} */
+#letter {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+#hero-name {
+    margin: 0;
+    display: block;
+    padding: 0;
+    display:block;
+    color: white;
+  }
+#hero-name li {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    display: inline-block;
+    padding: 0 10px;
+    font-size:1.6em;
+    color: white;
+    
+  }
+
+
+  /* active functions- on click, make it black */
+.active {
+    /* opacity: 50%; */
+    background: black;
+    border: solid 1px #ed1d24;
+    cursor: default;
+}
