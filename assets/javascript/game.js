@@ -1,7 +1,7 @@
 window.onload = function () {
 
 // declare global variables
-// heroes to choose from || array of 7
+// heroes to choose from
 var heroes = [
     "ironman", 
     "spiderman",
@@ -9,10 +9,12 @@ var heroes = [
     "thor", 
     "captainamerica", 
     "blackwidow", 
-    "hawkeye"
+    "hawkeye",
+    "starlord",
+    "captainmarvel"
 ];
 // random word to guess
-var targetWord;
+var hero;
 // user input
 var guess;
 // stored guesses (go in #already-guessed)
@@ -56,10 +58,11 @@ var buttons = function () {
 // console.log ("buttons made"); 
 }
 
-// pick a hero at random
-var hero = heroes[Math.floor(Math.random() * heroes.length)];
-console.log ("Random hero: " + hero);
-console.log("length of name: " + hero.length);
+
+// // pick a hero at random
+// var hero = heroes[Math.floor(Math.random() * heroes.length)];
+// console.log ("Random hero: " + hero);
+// console.log("length of name: " + hero.length);
 
 // display name as ___ 
 var forGuessing = function () {
@@ -89,7 +92,8 @@ gamerAlerts = function () {
         console.log ("Game Lost");
         losses += 1;
         lossesText.textContent = "losses: " + losses;
-        console.log("losses : "+ losses);
+        console.log("Losses : "+ losses);
+        reset ();
     }
     // console.log(`guess length ${guesses.length}`);
     // console.log(`counter`, counter);
@@ -99,9 +103,20 @@ gamerAlerts = function () {
             wins += 1;
             winsText.textContent= "wins: " + wins;
             console.log ("Game Won");
-            console.log ("wins: " + wins);
+            console.log ("Wins: " + wins);
+            reset ();
         }
     // }
+}
+
+// reset after win/loss
+reset = function () {
+    lives = 10;
+    // reset the word
+    correct.parentNode.removeChild(correct);
+    // don't make double letters when play again
+    letters.parentNode.removeChild(letters);
+    play ();
 }
 
 
@@ -121,13 +136,7 @@ check = function () {
               guesses[i].innerHTML = guess;
               counter += 1;
               console.log ("Counter: " + counter);
-            //   this part isn't working properly
           }
-        //   doesn't work else {
-        //     //   reduce the number of lives
-        //       --lives;
-        //       console.log ("lives: " + lives); 
-        //   }
         }
         // change lives here 
         var j = (hero.indexOf(guess));
@@ -154,19 +163,24 @@ check = function () {
 
 // actually call all the functions
 play = function () {
+    // pick a hero at random
+    hero = heroes[Math.floor(Math.random() * heroes.length)];
+    console.log ("Random hero: " + hero);
+    console.log("length of name: " + hero.length);
+    
     buttons();
     forGuessing ();
     // check ();   --> runs in buttons
     gamerAlerts();
+    lives = 10;
+    counter = 0;
 
 }
 
 
 play ();
 
-// things not working- no alerts of gamw won
-// game over working
-// how to reset
+// issues on reset- letters not displaying properly/guesses not going in properly
 
 
 console.log ("console working");
