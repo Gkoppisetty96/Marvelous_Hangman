@@ -1,16 +1,63 @@
 /* marvel comics red: #ed1d24 */
 
 body {
-    background-image: url("../images/dark-honeycomb.png");
-    background-repeat: repeat;
+    background: url("../images/bg-marvel.jpg") center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100%;
     line-height: 1.5em;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
+    color: #41414c;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
 }
+
+footer {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background: #666666;
+    color: #8d8d8d;
+    height: 3em;
+    padding: 1em;
+}
+
+.navbar {
+    color: #eff0f1;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+#header {
+    margin-top: 5em;
+    padding: 5px;
+}
+
+h1 {
+    font-family: 'Anton', sans-serif;
+    text-align: center;
+    color: #ed1d24;
+    font-size: 60px;
+    text-shadow: 0 0 7px #000000;
+}
+
+.game-here {
+    border: solid #ed1d24 3px;
+    
+    background-color: rgba(238, 238, 238, 0.81) !important;
+    /* background-image: url('http://placekitten.com/1500/1000'); */
+    background-blend-mode: color;
+}
+
+
 .col-sm {
-    border: solid #ed1d24 1px;
+    /* border: solid #ed1d24 1px; */
     /* margin-bottom: 50px; */
+    padding: 10px;
 }
 /* make the footer below everything */
 #bottom-row {
@@ -38,12 +85,12 @@ footer {
 }
 /* same hover effects as portfolio */
 a:hover {
-    text-shadow: 0 0 3px #4aaaa5;
+    text-shadow: 0 0 5px #b89fbd;
     text-decoration: none;
     color: currentColor;
 }
 a {
-    color:#777777; 
+    color:inherit; 
 }
 /* button style */
 button{
@@ -67,7 +114,7 @@ button{
     list-style:none;
     width:35px;
     height:30px;
-    padding-top:10px;
+    padding: 5px;
     background: white;
     cursor:pointer;
     border: solid 1px white;
@@ -88,8 +135,8 @@ button{
     margin: 0;
     display: block;
     padding: 0;
-    display:block;
-    color: white;
+    display: block;
+    color: #41414c;
   }
 #hero-name li {
     position: relative;
@@ -98,7 +145,7 @@ button{
     display: inline-block;
     padding: 0 10px;
     font-size:1.6em;
-    color: white;
+    color: #41414c;
     
   }
 
@@ -109,4 +156,7 @@ li.thisclicked{
     background: black;
     border: solid 1px #ed1d24;
     cursor: default;
+    padding: 5px;
+    text-align: center;
+    vertical-align: middle;
 }

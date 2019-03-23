@@ -3,15 +3,7 @@ window.onload = function () {
 // declare global variables
 // heroes to choose from
 var heroes = [
-    "ironman", 
-    "spiderman",
-    "hulk", 
-    "thor", 
-    "captainamerica", 
-    "blackwidow", 
-    "hawkeye",
-    "starlord",
-    "captainmarvel"
+    "ironman", "spiderman", "hulk", "thor", "captainamerica", "blackwidow", "hawkeye","starlord","captainmarvel","daredevil","deadpool","wolverine","doctorstrange","blackpanther","namor", "wasp","groot", "falcon", "spectrum", "warmachine", "antman", "starlord"
 ];
 // random word to guess
 var hero;
@@ -28,6 +20,21 @@ var counter = 0;
 var wins= 0;
 var losses = 0;
 var lives = 10;
+
+
+reset = function () {
+    console.log ("reset game");
+    lives = 10;
+    guesses = [];
+    // reset the word
+    correct.parentNode.removeChild(correct);
+    console.log ("reset the correct array");
+    // don't make double letters when play again
+    letters.parentNode.removeChild(letters);
+    console.log ("reset alphabet buttons so no doubles");
+    play ();
+    console.log ("start play");
+};
 
 // Getting Elements
 // var myLives = document.getElementById("guesses-left");
@@ -60,6 +67,7 @@ var buttons = function () {
 
 
 // // pick a hero at random
+// moved inside play function
 // var hero = heroes[Math.floor(Math.random() * heroes.length)];
 // console.log ("Random hero: " + hero);
 // console.log("length of name: " + hero.length);
@@ -77,6 +85,7 @@ var forGuessing = function () {
     // add each guess to the array
     guesses.push(guess);
     guessHere.appendChild(correct);
+    // console.log ("guessHere: " + this.guessHere);
     correct.appendChild(guess);
     // console.log("should be blanks : " + correct);
     }
@@ -89,9 +98,10 @@ gamerAlerts = function () {
     // if lives reaches 0, alert you lost
     if (lives < 1) {
         livesText.innerHTML = "Game Over";
+        alert("You Lost :(");
         console.log ("Game Lost");
         losses += 1;
-        lossesText.textContent = "losses: " + losses;
+        lossesText.textContent = "Losses: " + losses;
         console.log("Losses : "+ losses);
         reset ();
     }
@@ -100,8 +110,9 @@ gamerAlerts = function () {
     // for (var i = 0; i < guesses.length; i++) {
         if (counter === guesses.length) {
            livesText.innerHTML = "You Win!";
+           alert ("You Won!");
             wins += 1;
-            winsText.textContent= "wins: " + wins;
+            winsText.textContent= "Wins: " + wins;
             console.log ("Game Won");
             console.log ("Wins: " + wins);
             reset ();
@@ -110,14 +121,18 @@ gamerAlerts = function () {
 }
 
 // reset after win/loss
-reset = function () {
-    lives = 10;
-    // reset the word
-    correct.parentNode.removeChild(correct);
-    // don't make double letters when play again
-    letters.parentNode.removeChild(letters);
-    play ();
-}
+// reset = function () {
+//     console.log ("reset game");
+//     lives = 10;
+//     // reset the word
+//     correct.parentNode.removeChild(correct);
+//     console.log ("reset the correct array");
+//     // don't make double letters when play again
+//     letters.parentNode.removeChild(letters);
+//     console.log ("reset alphabet buttons so no doubles");
+//     play ();
+//     console.log ("start play");
+// }
 
 
 
@@ -183,6 +198,6 @@ play ();
 // issues on reset- letters not displaying properly/guesses not going in properly
 
 
-console.log ("console working");
+// console.log ("console working");
 }
 // end of js
