@@ -11,17 +11,6 @@ body {
     font-weight: 600;
 }
 
-footer {
-    width: 100%;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background: #666666;
-    color: #8d8d8d;
-    height: 3em;
-    padding: 1em;
-}
-
 .navbar {
     color: #eff0f1;
     position: fixed;
@@ -30,6 +19,23 @@ footer {
     width: 100%;
     z-index: 2;
     margin-bottom: 50px;
+}
+
+footer {
+    width: 100%;
+    background: #666666;
+    color: #8d8d8d;
+    height: 3em;
+    padding: 1em;
+}
+
+a:hover {
+    text-shadow: 0 0 5px #b89fbd;
+    text-decoration: none;
+    color: currentColor;
+}
+a {
+    color:inherit; 
 }
 
 #header {
